@@ -56,7 +56,19 @@ var agents = [
     Agent(name: "Breach",
            type: .initiator,
            shortDescription: "Initiator",
-           longDescription: "Breach, the bionic Swede, fires powerful, targeted kinetic blasts to aggressively clear a path through enemy ground. The damage and disruption he inflicts ensures no fight is ever fair.")
+           longDescription: "Breach, the bionic Swede, fires powerful, targeted kinetic blasts to aggressively clear a path through enemy ground. The damage and disruption he inflicts ensures no fight is ever fair."),
+    Agent(name: "Astra",
+           type: .controller,
+           shortDescription: "Initiator",
+           longDescription: "Ghanian agent Astra harnesses the energies of the cosmos to reshape battlefields to her whim. With full command of her astral form and a talent for deep strategic foresight, she's always eons ahead of her enemy's next move."),
+    Agent(name: "Killjoy",
+           type: .sentinel,
+           shortDescription: "Initiator",
+           longDescription: "The genius of Germany, Killjoy secures the battlefield with ease using her arsenal of inventions. If the damage from her gear doesn't stop her enemies, her robots debuff will help make short work of them."),
+    Agent(name: "Skye",
+           type: .initiator,
+           shortDescription: "Initiator",
+           longDescription: "Hailing from Australia, Skye and her band of beasts trail-blaze the way through hostile territory. With her creations hampering the enemy, and her power to heal others, the team is strongest and safest by Skye's side.")
 ]
 
 class Agent{

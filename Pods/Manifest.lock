@@ -639,6 +639,7 @@ PODS:
   - MotionAnimator (4.0.1):
     - MotionInterchange (~> 3.0)
   - MotionInterchange (3.0.0)
+  - Spring (1.0.6)
 
 DEPENDENCIES:
   - MaterialComponents
@@ -647,6 +648,7 @@ DEPENDENCIES:
   - MaterialComponents/schemes/Color
   - MaterialComponents/TextFields
   - "MaterialComponents/TextFields+ColorThemer"
+  - Spring (from `https://github.com/MengTo/Spring.git`)
 
 SPEC REPOS:
   trunk:
@@ -656,13 +658,23 @@ SPEC REPOS:
     - MotionAnimator
     - MotionInterchange
 
+EXTERNAL SOURCES:
+  Spring:
+    :git: https://github.com/MengTo/Spring.git
+
+CHECKOUT OPTIONS:
+  Spring:
+    :commit: 50d92a5b9e08848387ae95bf44c6ad20834f7083
+    :git: https://github.com/MengTo/Spring.git
+
 SPEC CHECKSUMS:
   MaterialComponents: c3f4e9d8e9cf9f02ab94a8b4823539fd9c7bf505
   MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
   MDFTextAccessibility: f4bb4cc2194286651b59a215fdeaa0e05dc90ba5
   MotionAnimator: 5f99d7c9592928c0f28a66283eda9c3b657dc480
   MotionInterchange: 13adae439b377e31d1674cc165539d50e1d1566a
+  Spring: 3d113f14575ef79aec9c5f906dfa4f5001c03254
 
-PODFILE CHECKSUM: 0f6e14600bdb29e95d4801989941a99e99b56364
+PODFILE CHECKSUM: 34af21716e4f862de3d370f3d299d9d80dea2046
 
 COCOAPODS: 1.10.1

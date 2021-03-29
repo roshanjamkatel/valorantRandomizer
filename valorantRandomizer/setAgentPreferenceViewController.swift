@@ -87,7 +87,6 @@ class setAgentPreferenceViewController: UIViewController {
             
             
         }
-        print(savedAgents.sharedInstance.dictionary)
 
     }
     

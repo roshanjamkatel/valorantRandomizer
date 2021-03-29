@@ -10,6 +10,7 @@ import MaterialComponents.MaterialButtons
 import MaterialComponents
 import MaterialComponents.MaterialContainerScheme
 import MaterialComponents.MaterialTextFields_Theming
+import Spring
 
 class randomeAgentViewController: UIViewController {
     
@@ -24,11 +25,15 @@ class randomeAgentViewController: UIViewController {
     @IBOutlet weak var agentName: UILabel!
     @IBOutlet weak var agentImage: UIImageView!
     @IBOutlet weak var button: MDCButton!
+    @IBOutlet weak var image: SpringView!
     
     @IBAction func getRandomAgenet(_ sender: Any) {
         let agentRandom = savedAgents.sharedInstance.dictionary.values.randomElement()
         agentName.text = agentRandom!
         agentImage.image = UIImage(named: agentRandom!)
+        image.animation = "pop"
+        image.duration = 1.0
+        image.animate()
     }
     
     /*

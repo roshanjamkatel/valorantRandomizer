@@ -10,6 +10,7 @@ import MaterialComponents.MaterialButtons
 import MaterialComponents
 import MaterialComponents.MaterialContainerScheme
 import MaterialComponents.MaterialTextFields_Theming
+import Spring
 
 class randomStratViewController: UIViewController {
     
@@ -28,27 +29,38 @@ class randomStratViewController: UIViewController {
     @IBOutlet weak var difficulty: UILabel!
     @IBOutlet weak var playingSide: UILabel!
     
+    // Spring Animations
+    @IBOutlet weak var difficultySide: SpringView!
+    
+    
     @IBOutlet weak var button: MDCButton!
     @IBAction func getStrat(_ sender: Any) {
         getRandomStrat()
+        difficultySide.animation = "pop"
+        difficultySide.duration = 1.0
+        difficultySide.animate()
+        
     }
     
     
     func getRandomStrat(){
         let randInt = Int.random(in:1..<400)
         savedLink.sharedInstance.endpoint = "https://api.diah.info/valorant/roulette.php?id=\(randInt)&format=json"
-            repository.getStrats { (result) in
+
+            self.repository.getStrats { (result) in
                         switch result {
                         case .success(let items):
-                            print("\(self) retrive strats: \(items)")
-                            self.randomStrat.text = items.description
-                            self.difficulty.text = items.difficulty
-                            self.playingSide.text = items.side
+                            
+                            DispatchQueue.main.async {
+                                self.randomStrat.text = items.description
+                                self.difficulty.text = items.difficulty
+                                self.playingSide.text = items.side
+                            }
                         case .failure(let error):
                             print("\(self) retrive error on get strats: \(error)")
-                        }
+                        
             }
-
+        }
     }
         
         

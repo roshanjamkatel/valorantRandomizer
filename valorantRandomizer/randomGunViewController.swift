@@ -10,6 +10,7 @@ import MaterialComponents.MaterialButtons
 import MaterialComponents
 import MaterialComponents.MaterialContainerScheme
 import MaterialComponents.MaterialTextFields_Theming
+import Spring
 
 class randomeGunViewController: UIViewController {
 
@@ -27,12 +28,16 @@ class randomeGunViewController: UIViewController {
     @IBOutlet weak var gunImage: UIImageView!
     @IBOutlet weak var gunName: UILabel!
     @IBOutlet weak var button: MDCButton!
+    @IBOutlet weak var image: SpringView!
     
-    
+
     @IBAction func getRandomGun(_ sender: Any) {
         let number = Int.random(in: 0..<14)
         gunName.text = savedGuns.sharedInstance.dictionary[number];
         gunImage.image = UIImage(named: gunName.text!)
+        image.animation = "pop"
+        image.duration = 1.0
+        image.animate()
     }
     
     /*
